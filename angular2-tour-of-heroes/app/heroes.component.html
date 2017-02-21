@@ -1,0 +1,29 @@
+<h2> My heroes </h2>
+
+<div>
+  <div style='width:30%;float:left'>
+  <ul class ="heroes">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+      <!-- each hero goes here -->
+      <span class="badge"> {{hero.id}}</span> {{hero.name}}
+      <button class="delete" (click)="deleteHero(hero); $event.stopPropagation()">x</button>
+    </li>
+  </ul>
+  </div>
+
+  <div style='width:70%;float:right'>
+    <div style='width:50%;float:left'>
+      <div><label> Hero ID:  </label></div><div><input #heroId /><br><br></div>
+      <div><label> Hero Name:</label></div><div><input #heroName /></div><br>
+      <button (click)="addHero(heroId.value,heroName.value); heroName.value=''"> Add Hero </button>
+    </div>
+    <div style='width:50%;float:right'>
+      <div *ngIf="selectedHero">
+        <h2>
+        {{ selectedHero.name | uppercase }} is my hero
+        </h2>
+        <button (click)="gotoDetails()">View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
