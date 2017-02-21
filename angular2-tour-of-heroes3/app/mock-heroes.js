@@ -1,0 +1,23 @@
+"use strict";
+//import {HttpModule, JsonpModule} from '@angular/http';
+exports.HEROES = [
+    { id: 11, name: 'Mr. Nice' },
+    { id: 12, name: 'Mr. Narco' },
+    { id: 13, name: 'Mr. Bombasto' },
+    { id: 14, name: 'Mr. Celeritas' },
+    { id: 15, name: 'Mr. Magneta' },
+    { id: 16, name: 'Mr. RubberMan' },
+    { id: 17, name: 'Mr. Dynama' },
+    { id: 18, name: 'Mr. Dr IQ' },
+    { id: 19, name: 'Mr. Magma' },
+    { id: 20, name: 'Mr. Tornado' }
+];
+/*debugger;
+//@Http();
+
+*/
+/*http.get("/angular/getemployees").map(function (custs) {
+  debugger;
+      this.HEROES = custs;
+});*/ 
+//# sourceMappingURL=mock-heroes.js.map
