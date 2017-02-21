@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="Assets">
+  <head>
+    <title>Angular 2 Tabs</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+    <h1>{{"Equipment Details" }}</h1>
+    <hr></hr>
+    <div ng-controller="EquipmentController as equipControl">
+    	<div ng-repeat="equip in equipControl.products">
+    		<h3>{{equipControl.lableNames.ModelName}}   : {{equip.ModelName}}</h3>
+    		<h3>{{equipControl.lableNames.ModelNumber}} : {{equip.ModelNumber}}</h3>
+    		<h3>{{equipControl.lableNames.SerialNumber}}: {{equip.SerialNumber}}</h3>
+    		<h3>{{equipControl.lableNames.LocationName}}: {{equip.LocationName}}</h3>
+    		<h3>{{equipControl.lableNames.Quantity}}    : {{equip.Quantity}}</h3>
+    		<h3>{{equipControl.lableNames.UnitCost}}    : {{equip.UnitCost | currency }}</h3>
+    		<div> 
+    			<button width="50%" ng-show="equip.canTransfer">Transfer</button> 
+    			<button width="50%" ng-hide="equip.isTrashed">Transh</button> 
+    		</div>
+    		<hr></hr>
+	    	<!-- 
+	    	<h3> Model Number{{": "+equipControl.product.ModelNumber}} </h3>
+	    	<h3> Serial Number{{": "+equipControl.product.SerialNumber}} </h3>
+	    	<h3> Location{{": "+equipControl.product.Location}} </h3>
+	    	<h3> UnitCost{{": "+"$"+equipControl.product.UnitCost}} </h3>
+	    	<h3> Quantity{{": "+equipControl.product.Quantity}} </h3>
+	    	<em class="pull-right">{{equipControl.product.UnitCost}}</em>  
+	    	-->
+    	</div>
+    </div>
+  </body>
+</html>
